@@ -3,6 +3,7 @@ import telebot
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
+import settings
 from bot_ms.bot import bot
 
 
@@ -14,3 +15,6 @@ def get_message(request: django.http.HttpRequest):
         bot.process_new_updates([update])
         return HttpResponse('!', 200)
     return HttpResponse('Method Not Allowed', 405)
+
+
+bot.set_webhook(url=f'botfb.hikmatillo.ru/{settings.BOT_TOKEN}')
