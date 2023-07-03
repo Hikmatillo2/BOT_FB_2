@@ -90,8 +90,8 @@ if os.environ.get("SERVER", '') in ["True", True]:
              'NAME': os.environ.get("TABLE_NAME", ''),
              'USER': os.environ.get('DATABASE_USER', ''),
              'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
-             'HOST':  os.environ.get('DATABASE_URL', ''),
-             'PORT': os.environ.get("DATABASE_PORT", ''),
+             'HOST': os.environ.get('DATABASE_URL', ''),
+             'PORT': '5431'# os.environ.get("DATABASE_PORT", ''),
          }
      }
 

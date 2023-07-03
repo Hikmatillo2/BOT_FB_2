@@ -1,0 +1,48 @@
+version: "3"
+services:
+#  database:
+#    hostname: database
+#    image: postgres:15.1-alpine
+#    restart: always
+#    environment:
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+#    expose:
+#      - "5432" # Publishes 5433 to other containers but NOT to host machine
+#    ports:
+#      - 5432:5432
+#    volumes:
+#      - elof_database2:/var/lib/postgresql/crm/data5
+#    networks:
+#      nw:
+#        aliases:
+#          - database
+  crm:
+      build: ./
+      command: /srv/telegram_admin/run.sh
+      environment:
+        - DATABASE_URL=database
+        - DATABASE_PASSWORD=postgres
+        - DATABASE_USER=postgres
+        - DATABASE_PORT=5432
+        - TABLE_NAME=ytb4
+        - DEBUG=False
+        - SERVER=True
+        - BOT_TOKEN=5432373192:AAFX_Sxn2iezTk2O3FS87Ff3ST3sBl292lY
+      ports:
+        - 89:88
+#      depends_on:
+#        - database
+      networks:
+        nw:
+          aliases:
+            - crm
+
+networks:
+  nw:
+  share:
+    driver:
+      bridge
+
+volumes:
+  elof_database2:
