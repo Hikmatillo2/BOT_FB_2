@@ -134,4 +134,4 @@ STATIC_ROOT = '/srv/telegram_admin/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", '5432373192:AAFX_Sxn2iezTk2O3FS87Ff3ST3sBl292lY')
+BOT_TOKEN = os.environ.get("BOT_TOKEN", '')
